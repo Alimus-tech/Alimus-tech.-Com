@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#06152e">
+<meta name="description" content="Alimus-tech : électricité du bâtiment et industrielle, maintenance, dépannage, formations et solutions technologiques à Kinshasa.">
+<title>ALIMUS-TECH | L'énergie en toute confiance</title>
+<style>
+:root{--navy:#06152e;--cyan:#00d4ff;--red:#ff394d;--white:#fff;--muted:#c2d0e2}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#06152e;color:#fff;line-height:1.7;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea,select{font:inherit}
+.tech-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(ellipse at 15% 20%,#00d4ff24,transparent 40%),radial-gradient(ellipse at 85% 75%,#ff394d1a,transparent 38%),linear-gradient(135deg,#041024,#09234a,#030b19)}
+.tech-bg:before{content:"";position:absolute;inset:-50%;background-image:linear-gradient(#00d4ff12 1px,transparent 1px),linear-gradient(90deg,#00d4ff12 1px,transparent 1px);background-size:48px 48px;transform:perspective(500px) rotateX(55deg);animation:gridmove 25s linear infinite}
+.tech-bg:after{content:"";position:absolute;width:280px;height:280px;left:55%;top:20%;border:1px solid #00d4ff55;border-radius:50%;box-shadow:0 0 50px #00d4ff14,inset 0 0 50px #00d4ff14;animation:pulse 7s ease-in-out infinite}
+@keyframes gridmove{to{background-position:96px 96px}}@keyframes pulse{0%,100%{transform:scale(.85);opacity:.3}50%{transform:scale(1.2);opacity:.8}}
+header{position:sticky;top:0;z-index:10;background:#030c1cf2;border-bottom:1px solid #00d4ff40;backdrop-filter:blur(14px)}
+.navbar{max-width:1200px;margin:auto;padding:12px 5%;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{display:flex;align-items:center;gap:10px;min-width:0}.logo img{width:52px;height:52px;object-fit:contain;border-radius:8px}.logo-symbol{width:48px;height:48px;display:none;place-items:center;border:2px solid var(--cyan);border-radius:12px;color:var(--cyan);font-size:25px;font-weight:bold}
+.logo-name{font-size:20px;font-weight:900;letter-spacing:1px;line-height:1.2}.logo-name span{color:var(--cyan)}.slogan{font-size:10px;color:var(--muted);margin-top:4px}
+.menu-wrap{position:relative}.menu-toggle{width:48px;height:44px;border:1px solid #00d4ff80;background:#00d4ff12;color:var(--cyan);border-radius:10px;cursor:pointer;font-size:25px;letter-spacing:2px}
+.dropdown{display:none;position:absolute;right:0;top:54px;width:250px;padding:10px;background:#07182f;border:1px solid #00d4ff60;border-radius:14px;box-shadow:0 15px 40px #0008}.dropdown.open{display:block}
+.dropdown a,.dropdown button{display:block;width:100%;text-align:left;padding:11px;margin:2px 0;color:white;background:transparent;border:0;border-radius:7px;cursor:pointer;font-size:14px}.dropdown a:hover,.dropdown button:hover{background:#00d4ff1e;color:var(--cyan)}
+.container{max-width:1120px;margin:auto;padding:0 22px}section{padding:78px 0;scroll-margin-top:75px}
+.title{text-align:center;font-size:clamp(27px,4vw,38px);margin-bottom:15px}.title span{color:var(--cyan)}.intro{text-align:center;color:var(--muted);max-width:760px;margin:0 auto 38px}
+.tag{display:inline-block;padding:7px 14px;border:1px solid #00d4ff70;border-radius:30px;color:var(--cyan);background:#00d4ff10;font-size:13px;margin-bottom:20px}
+.btn{display:inline-block;padding:13px 21px;border:1px solid var(--cyan);border-radius:8px;background:var(--cyan);color:#031426;font-weight:bold;cursor:pointer;text-align:center;transition:.2s}.btn:hover{background:transparent;color:var(--cyan);transform:translateY(-2px)}.secondary{background:transparent;color:white;border-color:#ffffff70}.buttons{display:flex;flex-wrap:wrap;gap:12px;margin-top:25px}
+.hero{min-height:82vh;display:flex;align-items:center;padding:65px 0}.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:center}.hero h1{font-size:clamp(35px,6vw,62px);line-height:1.15;margin-bottom:22px}.hero h1 span{color:var(--cyan)}.hero p{color:#d0dbea;font-size:17px}.visual{min-height:290px;display:grid;place-items:center;text-align:center;border:1px solid #00d4ff50;border-radius:24px;background:linear-gradient(145deg,#00d4ff20,#ffffff08);padding:25px}.bolt{font-size:90px;color:var(--cyan);text-shadow:0 0 30px #00d4ff80;animation:glow 3s infinite}@keyframes glow{50%{filter:drop-shadow(0 0 20px #00d4ff)}}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{padding:25px;background:#081c37dd;border:1px solid #00d4ff30;border-radius:15px;transition:.25s}.card:hover{transform:translateY(-5px);border-color:var(--cyan);box-shadow:0 10px 30px #00d4ff12}.icon{font-size:34px;margin-bottom:12px}.card h3{color:var(--cyan);margin-bottom:10px;font-size:19px}.card p,.card li{color:var(--muted);font-size:14px}.card ul{padding-left:18px;margin-top:10px}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.why-item{padding:20px;display:flex;gap:14px;background:#ffffff09;border-radius:12px;border-left:3px solid var(--cyan)}.why-item strong{display:block;margin-bottom:5px}.why-item p{color:var(--muted);font-size:14px}
+.note{max-width:850px;margin:28px auto 0;padding:24px;border:1px solid #00d4ff50;border-radius:14px;background:#00d4ff0d}.note h3{color:var(--cyan);margin-bottom:8px}.note p{color:var(--muted)}
+.form-box{max-width:800px;margin:auto;padding:28px;border:1px solid #00d4ff50;border-radius:17px;background:#05142aee}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:17px}.field{display:flex;flex-direction:column;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:14px;color:#dce9f8}.field input,.field select,.field textarea{width:100%;padding:12px;background:#091b34;color:white;border:1px solid #294461;border-radius:7px}.field textarea{min-height:120px;resize:vertical}.help{color:var(--muted);font-size:12px;margin-top:12px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.contact-card{padding:24px;border:1px solid #00d4ff30;background:#07182fdd;border-radius:13px;text-align:center}.contact-card h3{color:var(--cyan);margin-bottom:8px}.contact-card p{color:var(--muted);overflow-wrap:anywhere}
+footer{padding:32px 20px;text-align:center;border-top:1px solid #00d4ff30;background:#010814cc}footer p{color:var(--muted);font-size:13px;margin:5px}footer strong{color:var(--cyan)}#copyStatus{overflow-wrap:anywhere}
+@media(max-width:800px){.hero-grid{grid-template-columns:1fr}.hero{min-height:auto}.visual{min-height:220px}.cards{grid-template-columns:repeat(2,1fr)}.contact-grid{grid-template-columns:1fr}}
+@media(max-width:540px){section{padding:60px 0}.navbar{padding:10px 14px}.logo img,.logo-symbol{width:42px;height:42px}.logo-name{font-size:16px}.slogan{font-size:9px}.cards,.why-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.hero h1{font-size:37px}.buttons .btn{width:100%}.form-box{padding:19px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div class="tech-bg" aria-hidden="true"></div>
+<header><nav class="navbar">
+<a href="#accueil" class="logo" aria-label="Alimus-tech, accueil">
+<img src="logo.png" alt="Logo Alimus-tech" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'">
+<span class="logo-symbol">A⚡</span>
+<div><div class="logo-name">ALIMUS<span>-TECH</span></div><div class="slogan">L'énergie en toute confiance</div></div>
+</a>
+<div class="menu-wrap">
+<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="siteMenu" type="button">•••</button>
+<div class="dropdown" id="siteMenu">
+<a href="#accueil">⌂ Accueil</a><a href="#services">Nos services</a><a href="#pourquoi">Pourquoi Alimus-tech ?</a><a href="#formation">Nos formations</a><a href="#devis">Demandez votre devis</a><a href="#contact">Contactez-nous</a>
+<button type="button" id="copyLink">↗ Copier le lien du site</button>
+<a href="https://wa.me/243966692973" target="_blank" rel="noopener">WhatsApp</a>
+</div></div></nav></header>
+<main>
+<section class="hero" id="accueil"><div class="container hero-grid"><div>
+<span class="tag">TECHNOLOGIE • ÉNERGIE • INNOVATION</span>
+<h1>Bienvenue chez <span>Alimus-tech</span></h1>
+<p>Votre partenaire pour des installations électriques fiables, des solutions industrielles performantes et des technologies adaptées à vos besoins. Nous vous accompagnons de l'étude de votre projet jusqu'à sa réalisation, avec une attention particulière à la qualité, à la sécurité et au professionnalisme.</p>
+<div class="buttons"><a class="btn" href="#devis">Parlons de votre projet</a><a class="btn secondary" href="#services">Découvrir nos services</a></div>
+</div><div class="visual"><div><div class="bolt">⚡</div><h2>L'énergie en toute confiance</h2><p>Électricité du bâtiment, industrie, maintenance et formation technique.</p></div></div></div></section>
+<section id="services"><div class="container"><h2 class="title">Nos <span>services</span></h2><p class="intro">Des solutions techniques pour les particuliers, les entreprises, les commerces et les installations industrielles.</p><div class="cards">
+<article class="card"><div class="icon">🏠</div><h3>Électricité du bâtiment</h3><p>Installations électriques pour maisons, appartements, bureaux et bâtiments commerciaux.</p><ul><li>Éclairage intérieur et extérieur</li><li>Prises, circuits et tableaux</li><li>Diagnostic et dépannage</li></ul></article>
+<article class="card"><div class="icon">🏭</div><h3>Électricité industrielle</h3><p>Solutions électriques pour ateliers, entreprises, machines et installations industrielles.</p><ul><li>Circuits de puissance et commande</li><li>Tableaux industriels</li><li>Moteurs et maintenance</li></ul></article>
+<article class="card"><div class="icon">🔧</div><h3>Maintenance et dépannage</h3><p>Recherche de pannes et entretien préventif ou correctif des équipements.</p><ul><li>Diagnostic de défauts</li><li>Entretien des équipements</li><li>Remplacement de composants</li></ul></article>
+<article class="card"><div class="icon">🛡️</div><h3>Sécurité électrique</h3><p>Amélioration de la sécurité des personnes et des biens.</p><ul><li>Protection des circuits</li><li>Mise à la terre</li><li>Vérification des installations</li></ul></article>
+<article class="card"><div class="icon">💡</div><h3>Études et conseils techniques</h3><p>Accompagnement pour préparer vos travaux et choisir des solutions adaptées.</p><ul><li>Évaluation des besoins</li><li>Préparation des travaux</li><li>Conseils sur les équipements</li></ul></article>
+<article class="card"><div class="icon">💻</div><h3>Solutions technologiques</h3><p>Accompagnement dans les projets informatiques, numériques et techniques selon la demande.</p><ul><li>Assistance informatique</li><li>Solutions numériques</li><li>Conseils en équipements</li></ul></article>
+</div><div class="buttons" style="justify-content:center"><a class="btn" href="#devis">Demander un devis</a></div></div></section>
+<section id="pourquoi"><div class="container"><h2 class="title">Pourquoi choisir <span>Alimus-tech</span> ?</h2><p class="intro">Parce que chaque projet mérite une approche sérieuse, une solution adaptée et une réalisation axée sur la qualité.</p><div class="why-grid">
+<div class="why-item"><span>✓</span><div><strong>Approche professionnelle</strong><p>Préparation, organisation et suivi de chaque projet.</p></div></div>
+<div class="why-item"><span>⚡</span><div><strong>Compétences en électricité</strong><p>Des besoins du bâtiment aux installations industrielles.</p></div></div>
+<div class="why-item"><span>🛡️</span><div><strong>Sécurité prioritaire</strong><p>Bonnes pratiques, protections adaptées et respect des exigences techniques applicables.</p></div></div>
+<div class="why-item"><span>🎯</span><div><strong>Solutions adaptées</strong><p>Étude des besoins pour proposer une solution cohérente avec votre projet.</p></div></div>
+<div class="why-item"><span>🤝</span><div><strong>Accompagnement personnalisé</strong><p>Échange avec le client pour comprendre ses attentes et préparer les travaux.</p></div></div>
+<div class="why-item"><span>📚</span><div><strong>Partage des compétences</strong><p>Transmission de connaissances théoriques et pratiques aux apprenants et collaborateurs.</p></div></div>
+</div><div class="note"><h3>Notre engagement</h3><p>Alimus-tech vise à contribuer à des projets fiables et utiles, en associant compétence technique, sens des responsabilités et recherche de solutions adaptées aux réalités des clients.</p></div></div></section>
+<section id="formation"><div class="container"><h2 class="title">Nos <span>formations</span></h2><p class="intro">Développez vos connaissances et vos compétences grâce à des formations théoriques et pratiques orientées vers les métiers de l'électricité et les technologies.</p><div class="cards">
+<article class="card"><div class="icon">🏠</div><h3>Électricité du bâtiment</h3><p>Comprendre et préparer des installations électriques dans les bâtiments.</p><ul><li>Notions fondamentales</li><li>Lecture de schémas</li><li>Câblage et éclairage</li><li>Prises et tableaux</li><li>Protection électrique</li></ul></article>
+<article class="card"><div class="icon">🏭</div><h3>Électricité industrielle</h3><p>Découvrir les équipements et circuits des installations industrielles.</p><ul><li>Commande et puissance</li><li>Contacteurs et relais</li><li>Moteurs électriques</li><li>Schémas industriels</li><li>Principes de maintenance</li></ul></article>
+<article class="card"><div class="icon">📏</div><h3>Appareils de mesure</h3><p>Connaître les appareils de mesure et comprendre leurs fonctions.</p><ul><li>Multimètre numérique</li><li>Pince ampèremétrique</li><li>Tension et courant</li><li>Contrôle de continuité</li><li>Précautions de sécurité</li></ul></article>
+<article class="card"><div class="icon">🔧</div><h3>Maintenance électrique</h3><p>Apprendre les méthodes de diagnostic et d'entretien.</p><ul><li>Recherche de pannes</li><li>Entretien préventif</li><li>Diagnostic de défauts</li><li>Bonnes pratiques</li></ul></article>
+<article class="card"><div class="icon">💻</div><h3>Informatique et technologies</h3><p>Renforcer ses connaissances des outils informatiques et numériques.</p><ul><li>Initiation à l'informatique</li><li>Logiciels et outils numériques</li><li>Notions techniques appliquées</li></ul></article>
+<article class="card"><div class="icon">🧰</div><h3>Travaux pratiques</h3><p>Appliquer les notions étudiées à travers des exercices encadrés.</p><ul><li>Identification du matériel</li><li>Préparation des équipements</li><li>Lecture et réalisation de montages</li><li>Organisation du travail</li></ul></article>
+</div><div class="note"><h3>Une formation orientée vers la pratique</h3><p>Les programmes sont adaptés au niveau des apprenants. Les travaux électriques pratiques doivent être réalisés sous la supervision d'un encadreur compétent, avec les protections et équipements de sécurité nécessaires. Le contenu, la durée et les conditions d'inscription sont à confirmer avec Alimus-tech.</p><div class="buttons"><a class="btn" href="#contact">Se renseigner sur les formations</a></div></div></div></section>
+<section id="devis"><div class="container"><h2 class="title">Demandez votre <span>devis</span></h2><p class="intro">Décrivez votre projet électrique, industriel ou technologique pour préparer votre demande de devis.</p><div class="form-box"><form id="quoteForm"><div class="form-grid">
+<div class="field"><label for="nom">Nom complet *</label><input id="nom" name="nom" required placeholder="Votre nom complet"></div>
+<div class="field"><label for="telephone">Téléphone *</label><input id="telephone" name="telephone" type="tel" required placeholder="+243..."></div>
+<div class="field"><label for="email">Adresse e-mail</label><input id="email" name="email" type="email" placeholder="Votre e-mail"></div>
+<div class="field"><label for="typeProjet">Type de projet *</label><select id="typeProjet" name="typeProjet" required><option value="">Choisir un service</option><option>Électricité du bâtiment</option><option>Électricité industrielle</option><option>Maintenance et dépannage</option><option>Sécurité électrique</option><option>Études et conseils techniques</option><option>Solutions technologiques</option><option>Autre projet</option></select></div>
+<div class="field full"><label for="lieu">Lieu du projet</label><input id="lieu" name="lieu" placeholder="Commune, quartier ou ville"></div>
+<div class="field full"><label for="description">Description du projet *</label><textarea id="description" name="description" required placeholder="Expliquez les travaux souhaités et les détails utiles..."></textarea></div>
+</div><div class="buttons"><button class="btn" type="submit">Envoyer ma demande sur WhatsApp</button></div><p class="help">La demande sera préparée dans WhatsApp. Vous devrez encore appuyer sur Envoyer dans WhatsApp.</p></form></div></div></section>
+<section id="contact"><div class="container"><h2 class="title"><span>Contactez-nous</span></h2><p class="intro">Parlons de votre projet, de vos besoins techniques ou de votre participation à une formation.</p><div class="contact-grid">
+<div class="contact-card"><div class="icon">📱</div><h3>Téléphone</h3><p>+243 966 692 973</p><div class="buttons" style="justify-content:center"><a class="btn" href="tel:+243966692973">Appeler</a></div></div>
+<div class="contact-card"><div class="icon">💬</div><h3>WhatsApp</h3><p>Contact direct pour vos demandes</p><div class="buttons" style="justify-content:center"><a class="btn" href="https://wa.me/243966692973" target="_blank" rel="noopener">Écrire sur WhatsApp</a></div></div>
+<div class="contact-card"><div class="icon">📍</div><h3>Localisation</h3><p>Kinshasa, République démocratique du Congo</p></div>
+</div><div class="note" style="text-align:center"><h3>ALIMUS-TECH</h3><p>Électricité du bâtiment • Électricité industrielle • Maintenance • Formation technique • Solutions technologiques</p><div class="buttons" style="justify-content:center"><button type="button" class="btn" id="copyLinkBottom">Copier le lien de notre site</button></div><p id="copyStatus" aria-live="polite" style="margin-top:12px"></p></div></div></section>
+</main>
+<footer><p><strong>ALIMUS-TECH</strong></p><p>L'énergie en toute confiance.</p><p>Électricité du bâtiment et industrielle, maintenance, formation et solutions technologiques.</p><p>© <span id="year"></span> Alimus-tech. Tous droits réservés.</p></footer>
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const siteMenu=document.getElementById("siteMenu");
+menuToggle.addEventListener("click",()=>{const open=siteMenu.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));});
+siteMenu.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{siteMenu.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");}));
+document.addEventListener("click",e=>{if(!e.target.closest(".menu-wrap")){siteMenu.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");}});
+document.getElementById("year").textContent=new Date().getFullYear();
+
+/* COPIE DU LIEN : utilise le presse-papiers moderne, puis un secours compatible mobile. */
+async function copySiteLink(){
+  const link=window.location.href;
+  const status=document.getElementById("copyStatus");
+  try{
+    if(navigator.clipboard && window.isSecureContext){
+      await navigator.clipboard.writeText(link);
+      showCopyMessage("✅ Lien copié ! Vous pouvez le coller et le partager.");
+      return;
+    }
+  }catch(e){}
+  // Secours pour navigateurs mobiles qui bloquent le presse-papiers.
+  const temp=document.createElement("textarea");
+  temp.value=link;
+  temp.setAttribute("readonly","");
+  temp.style.position="fixed";
+  temp.style.top="0";
+  temp.style.left="-9999px";
+  document.body.appendChild(temp);
+  temp.focus();
+  temp.select();
+  temp.setSelectionRange(0,temp.value.length);
+  let copied=false;
+  try{copied=document.execCommand("copy");}catch(e){copied=false;}
+  temp.remove();
+  if(copied){
+    showCopyMessage("✅ Lien copié ! Vous pouvez le coller et le partager.");
+  }else{
+    // Prompt : sur Android, maintenir le doigt sur le lien pour choisir Copier.
+    window.prompt("Maintenez le doigt sur le lien ci-dessous puis choisissez Copier :",link);
+    showCopyMessage("Si la fenêtre s'ouvre, maintenez le doigt sur l'adresse et choisissez Copier.");
+  }
+}
+function showCopyMessage(message){
+  const status=document.getElementById("copyStatus");
+  if(status)status.textContent=message;
+  // Le menu se ferme seulement après le clic; le message reste visible en bas de page.
+}
+document.getElementById("copyLink").addEventListener("click",async()=>{
+  await copySiteLink();
+  siteMenu.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+});
+document.getElementById("copyLinkBottom").addEventListener("click",copySiteLink);
+
+document.getElementById("quoteForm").addEventListener("submit",event=>{
+  event.preventDefault();
+  const form=event.currentTarget;
+  if(!form.reportValidity())return;
+  const data=new FormData(form);
+  const message=[
+    "Bonjour Alimus-tech, je souhaite demander un devis.","",
+    "Nom : "+data.get("nom"),
+    "Téléphone : "+data.get("telephone"),
+    "E-mail : "+(data.get("email")||"Non renseigné"),
+    "Type de projet : "+data.get("typeProjet"),
+    "Lieu : "+(data.get("lieu")||"Non renseigné"),"",
+    "Description du projet :",data.get("description")
+  ].join("\n");
+  window.open("https://wa.me/243966692973?text="+encodeURIComponent(message),"_blank","noopener");
+});
+</script>
+</body>
+</html>
